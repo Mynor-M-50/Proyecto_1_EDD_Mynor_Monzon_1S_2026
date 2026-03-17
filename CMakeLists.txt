@@ -17,4 +17,13 @@ add_executable(Proyecto_1
         Graficos/ReporteGraficos.cpp
         Estructuras/NodoArbolB.h
         Estructuras/NodoArbolAVL.h
-        Estructuras/NodoArbolBPlus.h)
+        Estructuras/NodoArbolBPlus.h
+        Carga/CSVLoader.h
+        Carga/CSVLoader.cpp
+        Catalogo/Catalogo.h
+        Catalogo/Catalogo.cpp
+        Modelo/Producto.h
+        Utils/Logger.h
+        Utils/Logger.cpp
+        Utils/Benchmark.h
+        Utils/Benchmark.cpp)
