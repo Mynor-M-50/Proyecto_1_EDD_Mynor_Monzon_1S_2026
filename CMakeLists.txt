@@ -12,7 +12,7 @@ add_executable(Proyecto_1
         Estructuras/ListaEnlazada.h
         Estructuras/NodoListaEnlazada.h
         Estructuras/TablaHash.h
-        main.cpp
+        main_pruebas.cpp
         Graficos/ReporteGraficos.h
         Graficos/ReporteGraficos.cpp
         Estructuras/NodoArbolB.h
@@ -26,4 +26,5 @@ add_executable(Proyecto_1
         Utils/Logger.h
         Utils/Logger.cpp
         Utils/Benchmark.h
-        Utils/Benchmark.cpp)
+        Utils/Benchmark.cpp
+        main.cpp)
