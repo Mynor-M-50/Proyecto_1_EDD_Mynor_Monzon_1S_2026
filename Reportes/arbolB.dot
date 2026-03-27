@@ -1,0 +1,11 @@
+digraph ArbolB {
+    node [shape=record, style=filled, fillcolor=lightyellow];
+    label="Árbol B (d=2)";
+    node0x60af581f5c20 [label="<f0> Avena | <f1> Leche | <f2>"];
+    node0x60af581f5c20:f0 -> node0x60af581f49c0;
+    node0x60af581f49c0 [label="<f0> Aceite | <f1> Arroz | <f2>"];
+    node0x60af581f5c20:f1 -> node0x60af581f6e40;
+    node0x60af581f6e40 [label="<f0> Batido | <f1> Cereal | <f2>"];
+    node0x60af581f5c20:f2 -> node0x60af581f5f20;
+    node0x60af581f5f20 [label="<f0> Mango | <f1> Naranja | <f2> Platano | <f3> Zanahoria | <f4>"];
+}

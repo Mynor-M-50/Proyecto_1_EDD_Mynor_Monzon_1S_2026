@@ -29,6 +29,14 @@ public:
     Producto* buscarPorCodigo(std::string codigo);
 
     void imprimirResumen();
+
+    ArbolAVL& getAVL() {
+        return avl;
+    }
+
+    ArbolB& getArbolB() {
+        return arbolB;
+    }
 };
 
 #endif

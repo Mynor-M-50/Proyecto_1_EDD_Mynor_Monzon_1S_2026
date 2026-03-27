@@ -6,6 +6,7 @@
 #include "Catalogo/Catalogo.h"
 #include "Carga/CSVLoader.h"
 #include "Utils/Logger.h"
+#include "Graficos/ReporteGraficos.h"
 
 Catalogo catalogo;
 
@@ -33,6 +34,10 @@ int main() {
     }
 
     catalogo.imprimirResumen();
+
+    ReporteGraficos rep;
+    rep.generarAVL(catalogo.getAVL());
+    rep.generarArbolB(catalogo.getArbolB());
 
     return 0;
 }

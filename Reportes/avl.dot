@@ -1,0 +1,23 @@
+digraph AVL {
+    node [shape=record, style=filled, fillcolor=lightblue];
+    label="Árbol AVL de Productos";
+    node0x60af581f48f0 [label="{ Leche | FE: 0 }"];
+    node0x60af581f48f0 -> node0x60af581f5840;
+    node0x60af581f5840 [label="{ Avena | FE: 0 }"];
+    node0x60af581f5840 -> node0x60af581f5200;
+    node0x60af581f5200 [label="{ Arroz | FE: -1 }"];
+    node0x60af581f5200 -> node0x60af581f5b50;
+    node0x60af581f5b50 [label="{ Aceite | FE: 0 }"];
+    node0x60af581f5840 -> node0x60af581f6a60;
+    node0x60af581f6a60 [label="{ Batido | FE: 1 }"];
+    node0x60af581f6a60 -> node0x60af581f6d70;
+    node0x60af581f6d70 [label="{ Cereal | FE: 0 }"];
+    node0x60af581f48f0 -> node0x60af581f7990;
+    node0x60af581f7990 [label="{ Naranja | FE: 1 }"];
+    node0x60af581f7990 -> node0x60af581f7680;
+    node0x60af581f7680 [label="{ Mango | FE: 0 }"];
+    node0x60af581f7990 -> node0x60af581f5530;
+    node0x60af581f5530 [label="{ Zanahoria | FE: -1 }"];
+    node0x60af581f5530 -> node0x60af581f7ca0;
+    node0x60af581f7ca0 [label="{ Platano | FE: 0 }"];
+}
