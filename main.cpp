@@ -7,6 +7,8 @@
 #include "Carga/CSVLoader.h"
 #include "Utils/Logger.h"
 #include "Graficos/ReporteGraficos.h"
+#include "Utils/Benchmark.h"
+
 
 Catalogo catalogo;
 
@@ -18,10 +20,19 @@ int main() {
 
     Logger logger;
     CSVLoader loader(&logger);
+    Benchmark timer;
 
-    std::cout << "\n--- Carga Masiva ---\n";
+    std::cout << "\n--- Carga Masiva y Benchmark ---\n";
 
+    timer.iniciar("Insercion masiva en todas las estructuras");
     loader.cargarArchivo("productos.csv", insertarEnCatalogo);
+    timer.finalizar();
+
+    std::cout << "\n--- Benchmark de Busqueda ---\n";
+
+    timer.iniciar("Busqueda por codigo (Hash)");
+    catalogo.buscarPorCodigo("101");
+    timer.finalizar();
 
     std::cout << "\n--- Busqueda ---\n";
 
@@ -38,6 +49,8 @@ int main() {
     ReporteGraficos rep;
     rep.generarAVL(catalogo.getAVL());
     rep.generarArbolB(catalogo.getArbolB());
+    rep.generarArbolBPlus(catalogo.getArbolBPlus());
+    rep.generarTablaHash(catalogo.getTablaHash());
 
     return 0;
 }

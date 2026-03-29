@@ -37,6 +37,14 @@ public:
     ArbolB& getArbolB() {
         return arbolB;
     }
+
+    ArbolBPlus& getArbolBPlus() {
+        return arbolBPlus;
+    }
+
+    TablaHash& getTablaHash() {
+        return hash;
+    }
 };
 
 #endif

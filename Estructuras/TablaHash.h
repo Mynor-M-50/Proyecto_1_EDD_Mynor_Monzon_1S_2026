@@ -15,7 +15,7 @@ private:
     static const int TAMANIO_INICIAL = 101; // Un numero primo ayuda a distribuir mejor
     ListaEnlazada<Producto>* tabla[TAMANIO_INICIAL];
 
-    // Función Hash simple (Suma de caracteres ASCII % tamano)
+    // Hash simple (Suma de caracteres ASCII % tamano)
     int funcionHash(std::string llave) const {
         unsigned long hash = 5381;
         for (char c : llave) {
@@ -56,13 +56,31 @@ public:
     }
 
     void imprimirEstado() {
-        std::cout << "--- ESTADO DE LA TABLA HASH ---\n";
+        std::cout << "--- Estado de la Tabla Hash ---\n";
         for (int i = 0; i < TAMANIO_INICIAL; i++) {
             if (tabla[i]->getHead() != nullptr) {
                 std::cout << "Indice [" << i << "]: ";
                 tabla[i]->imprimirNombres();
             }
         }
+    }
+
+    // Getter para saber cuntas cubetas ocupadas hay
+    int getCubitasOcupadas() const {
+        int count = 0;
+        for (int i = 0; i < TAMANIO_INICIAL; i++) {
+            if (tabla[i]->getHead() != nullptr) count++;
+        }
+        return count;
+    }
+
+    // Para que ReporteGraficos pueda acceder
+    ListaEnlazada<Producto>* getCubeta(int i) const {
+        return tabla[i];
+    }
+
+    int getTamanio() const {
+        return TAMANIO_INICIAL;
     }
 };
 

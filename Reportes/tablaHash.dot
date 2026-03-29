@@ -1,0 +1,26 @@
+digraph TablaHash {
+    rankdir=LR;
+    node [shape=record];
+    label="Tabla Hash (Encadenamiento)";
+    indices [label="<f23> [23] | <f24> [24] | <f25> [25] | <f26> [26] | <f27> [27] | <f28> [28] | <f29> [29] | <f30> [30] | <f31> [31] | <f55> [55]"];
+    indices:f23 -> node0x588fc1c26040;
+    node0x588fc1c26040 [label="{ Leche | 101 }"];
+    indices:f24 -> node0x588fc1c26350;
+    node0x588fc1c26350 [label="{ Arroz | 102 }"];
+    indices:f25 -> node0x588fc1c26680;
+    node0x588fc1c26680 [label="{ Zanahoria | 103 }"];
+    indices:f26 -> node0x588fc1c26990;
+    node0x588fc1c26990 [label="{ Avena | 104 }"];
+    indices:f27 -> node0x588fc1c278a0;
+    node0x588fc1c278a0 [label="{ Aceite | 105 }"];
+    indices:f28 -> node0x588fc1c27bb0;
+    node0x588fc1c27bb0 [label="{ Batido | 106 }"];
+    indices:f29 -> node0x588fc1c284c0;
+    node0x588fc1c284c0 [label="{ Cereal | 107 }"];
+    indices:f30 -> node0x588fc1c287d0;
+    node0x588fc1c287d0 [label="{ Mango | 108 }"];
+    indices:f31 -> node0x588fc1c28ae0;
+    node0x588fc1c28ae0 [label="{ Naranja | 109 }"];
+    indices:f55 -> node0x588fc1c290f0;
+    node0x588fc1c290f0 [label="{ Platano | 110 }"];
+}

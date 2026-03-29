@@ -19,7 +19,7 @@ struct Producto {
     // constructor vacio
     Producto() : precio(0.0), stock(0) {}
 
-    // Constructor con parámetros
+    // Constructor con parametros
     Producto(std::string n, std::string cb, std::string cat, std::string fv, std::string m, double p, int s)
         : nombre(n), codigoBarras(cb), categoria(cat), fechaVencimiento(fv), marca(m), precio(p), stock(s) {}
 };

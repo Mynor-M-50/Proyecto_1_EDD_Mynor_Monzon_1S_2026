@@ -10,7 +10,6 @@
 #include "NodoListaEnlazada.h"
 #include <algorithm>
 #include <cctype>
-#include "../Modelo/Producto.h"
 
 template <typename T>
 class ListaEnlazada {

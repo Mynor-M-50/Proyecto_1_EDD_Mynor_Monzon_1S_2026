@@ -1,0 +1,14 @@
+digraph ArbolBPlus {
+    node [shape=record, style=filled, fillcolor=lightgreen];
+    label="Arbol B+ (d=2)";
+    rankdir=TB;
+    node0x588fc1c272a0 [fillcolor=lightgreen, label="<f0>Avena|<f1>Leche|<f2>Naranja|<f3>"];
+    node0x588fc1c272a0:f0 -> node0x588fc1c25d40;
+    node0x588fc1c25d40 [fillcolor=palegreen, label="<f0>Aceite|<f1>Arroz|<f2>"];
+    node0x588fc1c272a0:f1 -> node0x588fc1c281c0;
+    node0x588fc1c281c0 [fillcolor=palegreen, label="<f0>Avena|<f1>Batido|<f2>Cereal|<f3>"];
+    node0x588fc1c272a0:f2 -> node0x588fc1c275a0;
+    node0x588fc1c275a0 [fillcolor=palegreen, label="<f0>Leche|<f1>Mango|<f2>"];
+    node0x588fc1c272a0:f3 -> node0x588fc1c28df0;
+    node0x588fc1c28df0 [fillcolor=palegreen, label="<f0>Naranja|<f1>Platano|<f2>Zanahoria|<f3>"];
+}

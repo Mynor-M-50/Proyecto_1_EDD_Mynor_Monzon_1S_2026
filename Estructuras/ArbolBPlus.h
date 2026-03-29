@@ -109,6 +109,8 @@ private:
 public:
     ArbolBPlus() : raiz(nullptr) {}
 
+    NodoArbolBPlus* getRaiz() { return raiz; }
+
     void insertar(const Producto& p) {
         if (raiz == nullptr) {
             raiz = new NodoArbolBPlus(true);
