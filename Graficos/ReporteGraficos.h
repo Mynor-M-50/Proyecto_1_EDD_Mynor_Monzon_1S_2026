@@ -11,13 +11,14 @@
 #include "../Estructuras/TablaHash.h"
 #include "../Estructuras/NodoListaEnlazada.h"
 #include <fstream>
+#include <string>
 
 class ReporteGraficos {
 public:
-    void generarAVL(ArbolAVL& arbol);
-    void generarArbolB(ArbolB& arbol);
-    void generarArbolBPlus(ArbolBPlus& arbol);
-    void generarTablaHash(TablaHash& hash);
+    void generarAVL(ArbolAVL& arbol,          const std::string& nombre = "avl");
+    void generarArbolB(ArbolB& arbol,          const std::string& nombre = "arbolB");
+    void generarArbolBPlus(ArbolBPlus& arbol,  const std::string& nombre = "arbolBPlus");
+    void generarTablaHash(TablaHash& hash,     const std::string& nombre = "tablaHash");
 
 private:
     void generarNodosAVL(std::ofstream& archivo, NodoArbolAVL* nodo);

@@ -8,34 +8,36 @@
 #include "../Estructuras/NodoArbolBPlus.h"
 #include <fstream>
 #include <cstdlib>
+#include <string>
 
 //////////////////////////////////////////////////////////////
 //                         AVL
 //////////////////////////////////////////////////////////////
 
-void ReporteGraficos::generarAVL(ArbolAVL& arbol) {
+void ReporteGraficos::generarAVL(ArbolAVL& arbol, const std::string& nombre) {
+    system("mkdir -p Reportes");
 
-    system("mkdir -p Reportes"); // crea carpeta si no existe
+    std::string dotFile = "Reportes/" + nombre + ".dot";
+    std::string pngFile = "Reportes/" + nombre + ".png";
 
-    std::ofstream archivo("Reportes/avl.dot");
-
+    std::ofstream archivo(dotFile);
     if (!archivo.is_open()) {
-        std::cerr << "[ERROR] No se pudo crear avl.dot\n";
+        std::cerr << "[ERROR] No se pudo crear " << dotFile << "\n";
         return;
     }
 
     archivo << "digraph AVL {\n";
     archivo << "    node [shape=record, style=filled, fillcolor=lightblue];\n";
-    archivo << "    label=\"Árbol AVL de Productos\";\n";
+    archivo << "    label=\"Arbol AVL de Productos\";\n";
 
     generarNodosAVL(archivo, arbol.getRaiz());
 
     archivo << "}\n";
     archivo.close();
 
-    std::cout << "[INFO] Generando imagen AVL...\n";
-    system("dot -Tpng Reportes/avl.dot -o Reportes/avl.png");
-    std::cout << "[INFO] Imagen Reportes/avl.png generada con éxito.\n";
+    std::string cmd = "dot -Tpng " + dotFile + " -o " + pngFile;
+    system(cmd.c_str());
+    std::cout << "[INFO] Imagen " << pngFile << " generada con exito.\n";
 }
 
 void ReporteGraficos::generarNodosAVL(std::ofstream& archivo, NodoArbolAVL* nodo) {
@@ -60,35 +62,35 @@ void ReporteGraficos::generarNodosAVL(std::ofstream& archivo, NodoArbolAVL* nodo
 //                          ARBOL B
 //////////////////////////////////////////////////////////////
 
-void ReporteGraficos::generarArbolB(ArbolB& arbol) {
+void ReporteGraficos::generarArbolB(ArbolB& arbol, const std::string& nombre) {
+    system("mkdir -p Reportes");
 
-    system("mkdir -p Reportes"); // asegura carpeta
+    std::string dotFile = "Reportes/" + nombre + ".dot";
+    std::string pngFile = "Reportes/" + nombre + ".png";
 
-    std::ofstream archivo("Reportes/arbolB.dot");
-
+    std::ofstream archivo(dotFile);
     if (!archivo.is_open()) {
-        std::cerr << "[ERROR] No se pudo crear arbolB.dot\n";
+        std::cerr << "[ERROR] No se pudo crear " << dotFile << "\n";
         return;
     }
 
     archivo << "digraph ArbolB {\n";
     archivo << "    node [shape=record, style=filled, fillcolor=lightyellow];\n";
-    archivo << "    label=\"Árbol B (d=2)\";\n";
+    archivo << "    label=\"Arbol B (d=2)\";\n";
 
     generarNodosB(archivo, arbol.getRaiz());
 
     archivo << "}\n";
     archivo.close();
 
-    std::cout << "[INFO] Generando imagen Arbol B...\n";
-    system("dot -Tpng Reportes/arbolB.dot -o Reportes/arbolB.png");
-    std::cout << "[INFO] Imagen Reportes/arbolB.png generada con éxito.\n";
+    std::string cmd = "dot -Tpng " + dotFile + " -o " + pngFile;
+    system(cmd.c_str());
+    std::cout << "[INFO] Imagen " << pngFile << " generada con exito.\n";
 }
 
 void ReporteGraficos::generarNodosB(std::ofstream& archivo, NodoArbolB* nodo) {
     if (nodo == nullptr) return;
 
-    // nodo tipo tabla
     archivo << "    node" << nodo << " [label=\"";
 
     for (int i = 0; i < nodo->getNumLlaves(); i++) {
@@ -99,13 +101,11 @@ void ReporteGraficos::generarNodosB(std::ofstream& archivo, NodoArbolB* nodo) {
 
     archivo << " | <f" << nodo->getNumLlaves() << ">\"];\n";
 
-    // conexiones
     if (!nodo->getEsHoja()) {
         for (int i = 0; i <= nodo->getNumLlaves(); i++) {
             if (nodo->getHijo(i) != nullptr) {
                 archivo << "    node" << nodo << ":f" << i
-                    << " -> node" << nodo->getHijo(i) << ";\n";
-
+                        << " -> node" << nodo->getHijo(i) << ";\n";
                 generarNodosB(archivo, nodo->getHijo(i));
             }
         }
@@ -116,52 +116,83 @@ void ReporteGraficos::generarNodosB(std::ofstream& archivo, NodoArbolB* nodo) {
 //                      ARBOL B Plus
 //////////////////////////////////////////////////////////////
 
-void ReporteGraficos::generarArbolBPlus(ArbolBPlus &arbol) {
+void ReporteGraficos::generarArbolBPlus(ArbolBPlus& arbol, const std::string& nombre) {
     system("mkdir -p Reportes");
-    std::ofstream archivo("Reportes/arbolBPlus.dot");
 
+    std::string dotFile = "Reportes/" + nombre + ".dot";
+    std::string pngFile = "Reportes/" + nombre + ".png";
+
+    std::ofstream archivo(dotFile);
     if (!archivo.is_open()) {
-        std::cerr << "[ERROR] No se pudo crear arbolBPlus.dot\n";
+        std::cerr << "[ERROR] No se pudo crear " << dotFile << "\n";
         return;
     }
 
     archivo << "digraph ArbolBPlus {\n";
-
-    archivo << "    node [shape=record, style=filled, fillcolor=lightgreen];\n";
     archivo << "    label=\"Arbol B+ (d=2)\";\n";
     archivo << "    rankdir=TB;\n";
 
-    // dibujar todos los nodos
     generarNodosBPlus(archivo, arbol.getRaiz());
+
+    NodoArbolBPlus* hoja = arbol.getRaiz();
+    if (hoja != nullptr) {
+        while (!hoja->getEsHoja()) {
+            hoja = hoja->getHijo(0);
+        }
+
+        archivo << "\n    // Enlace entre hojas\n";
+        archivo << "    edge [color=red, style=dashed, constraint=false, weight=0];\n";
+
+        NodoArbolBPlus* temp = hoja;
+        archivo << "    { rank=same; ";
+        while (temp != nullptr) {
+            archivo << "node" << temp << "; ";
+            temp = temp->getSiguiente();
+        }
+        archivo << "}\n";
+
+        while (hoja != nullptr && hoja->getSiguiente() != nullptr) {
+            archivo << "    node" << hoja
+                    << " -> node" << hoja->getSiguiente()
+                    << " [dir=forward];\n";
+            hoja = hoja->getSiguiente();
+        }
+
+        archivo << "    edge [color=black, style=solid, constraint=true];\n";
+    }
 
     archivo << "}\n";
     archivo.close();
 
-    std::cout << "[INFO] Generando imagen Arbol BPlus...\n";
-    system("dot -Tpng Reportes/arbolBPlus.dot -o Reportes/arbolBPlus.png");
-    std::cout << "[INFO] Imagen Reportes/arbolBPlus.png generada con exito.\n";
+    std::string cmd = "dot -Tpng " + dotFile + " -o " + pngFile;
+    system(cmd.c_str());
+    std::cout << "[INFO] Imagen " << pngFile << " generada con exito.\n";
 }
 
-void ReporteGraficos::generarNodosBPlus(std::ofstream &archivo, NodoArbolBPlus *nodo) {
+void ReporteGraficos::generarNodosBPlus(std::ofstream& archivo, NodoArbolBPlus* nodo) {
     if (nodo == nullptr) return;
 
-    // Color segun si es hoja o no
     std::string color = nodo->getEsHoja() ? "palegreen" : "lightgreen";
 
-    archivo << "    node" << nodo << " [fillcolor=" << color << ", label=\"";
+    archivo << "    node" << nodo
+            << " [style=filled, fillcolor=" << color
+            << ", shape=plaintext, label=<\n"
+            << "        <TABLE BORDER=\"1\" CELLBORDER=\"1\" CELLSPACING=\"0\">\n"
+            << "        <TR>\n";
 
     for (int i = 0; i < nodo->getNumLlaves(); i++) {
-        archivo << "<f" << i << ">" << nodo->getLlave(i).nombre;
-        archivo << "|";
+        archivo << "            <TD PORT=\"f" << i << "\">"
+                << nodo->getLlave(i).nombre << "</TD>\n";
     }
-    archivo << "<f" << nodo->getNumLlaves() << ">\"];\n";
+    archivo << "            <TD PORT=\"f" << nodo->getNumLlaves() << "\"> </TD>\n";
+    archivo << "        </TR>\n"
+            << "        </TABLE>>];\n";
 
-    // conexiones con hijos
     if (!nodo->getEsHoja()) {
         for (int i = 0; i <= nodo->getNumLlaves(); i++) {
             if (nodo->getHijo(i) != nullptr) {
                 archivo << "    node" << nodo << ":f" << i
-                        << " -> node" << nodo->getHijo(i) << ";\n";
+                        << " -> node" << nodo->getHijo(i) << ":f0;\n";
                 generarNodosBPlus(archivo, nodo->getHijo(i));
             }
         }
@@ -172,16 +203,23 @@ void ReporteGraficos::generarNodosBPlus(std::ofstream &archivo, NodoArbolBPlus *
 //                      Tabla Hash
 //////////////////////////////////////////////////////////////
 
-void ReporteGraficos::generarTablaHash(TablaHash& hash) {
+void ReporteGraficos::generarTablaHash(TablaHash& hash, const std::string& nombre) {
     system("mkdir -p Reportes");
-    std::ofstream archivo("Reportes/tablaHash.dot");
+
+    std::string dotFile = "Reportes/" + nombre + ".dot";
+    std::string pngFile = "Reportes/" + nombre + ".png";
+
+    std::ofstream archivo(dotFile);
+    if (!archivo.is_open()) {
+        std::cerr << "[ERROR] No se pudo crear " << dotFile << "\n";
+        return;
+    }
 
     archivo << "digraph TablaHash {\n";
-    archivo << "    rankdir=LR;\n"; // De izquierda a derecha
+    archivo << "    rankdir=LR;\n";
     archivo << "    node [shape=record];\n";
     archivo << "    label=\"Tabla Hash (Encadenamiento)\";\n";
 
-    // 1 .dibujar la columna de indices (el arreglo principal)
     archivo << "    indices [label=\"";
     bool primero = true;
     for (int i = 0; i < hash.getTamanio(); i++) {
@@ -193,21 +231,17 @@ void ReporteGraficos::generarTablaHash(TablaHash& hash) {
     }
     archivo << "\"];\n";
 
-    // 2. dibujar las listas para cada cubeta que no est vacia
     for (int i = 0; i < hash.getTamanio(); i++) {
         NodoListaEnlazada<Producto>* actual = hash.getCubeta(i)->getHead();
 
         if (actual != nullptr) {
-            // Conectar el indice con el primer nodo de la lista
             archivo << "    indices:f" << i << " -> node" << actual << ";\n";
 
             while (actual != nullptr) {
-                // dibujar el nodo del producto
                 archivo << "    node" << actual << " [label=\"{ "
                         << actual->getValor().nombre << " | "
                         << actual->getValor().codigoBarras << " }\"];\n";
 
-                // conectar con el siguiente si existe
                 if (actual->getSiguiente() != nullptr) {
                     archivo << "    node" << actual << " -> node" << actual->getSiguiente() << ";\n";
                 }
@@ -219,7 +253,7 @@ void ReporteGraficos::generarTablaHash(TablaHash& hash) {
     archivo << "}\n";
     archivo.close();
 
-    std::cout << "[INFO] Generando imagen Tabla Hash...\n";
-    system("dot -Tpng Reportes/tablaHash.dot -o Reportes/tablaHash.png");
-    std::cout << "[INFO] Imagen Reportes/tablaHash.png generada con exito.\n";
+    std::string cmd = "dot -Tpng " + dotFile + " -o " + pngFile;
+    system(cmd.c_str());
+    std::cout << "[INFO] Imagen " << pngFile << " generada con exito.\n";
 }

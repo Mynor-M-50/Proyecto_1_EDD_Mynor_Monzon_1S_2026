@@ -190,7 +190,7 @@ private:
                 delete nodo;
                 return temp;
             }
-            // Caso 4: dos hijos → reemplazar con mínimo del subárbol derecho
+            // Caso 4: dos hijos -> reemplazar con mnimo del subarbol derecho
             NodoArbolAVL* sucesor = minimoNodo(nodo->getDer());
             nodo->setValor(sucesor->getValor());
             bool aux = false;

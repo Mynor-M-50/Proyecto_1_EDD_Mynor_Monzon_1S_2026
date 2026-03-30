@@ -25,14 +25,14 @@ public:
     }
 
     void info(const std::string& mensaje) {
-        std::cout << "[INFO]" << mensaje << std::endl;
+        std::cout << "[INFO] " << mensaje << std::endl;
         if (archivo.is_open()) {
             archivo << "[INFO]" << mensaje << std::endl;
         }
     }
 
     void error(const std::string& mensaje) {
-        std::cout << "[ERROR]" << mensaje << std::endl;
+        std::cout << "[ERROR] " << mensaje << std::endl;
         if (archivo.is_open()) {
             archivo << "[ERROR]" << mensaje << std::endl;
         }

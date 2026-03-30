@@ -8,8 +8,8 @@
 #include "../Modelo/Producto.h"
 
 const int ORDEN_B = 2;
-const int MAX_LLAVES = 2 * ORDEN_B;      // 4 llaves máximo
-const int MAX_HIJOS  = MAX_LLAVES + 1;   // 5 hijos máximo
+const int MAX_LLAVES = 2 * ORDEN_B;      // 4 llaves maximo
+const int MAX_HIJOS  = MAX_LLAVES + 1;   // 5 hijos maximo
 
 class NodoArbolB {
 private:

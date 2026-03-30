@@ -3,11 +3,11 @@ digraph ArbolB {
     label="Arbol B (d=2)";
     node0x5fcf66332420 [label="<f0> Avena Integral | <f1>"];
     node0x5fcf66332420:f0 -> node0x5fcf6632dca0;
-    node0x5fcf6632dca0 [label="<f0> Mango | <f1> Leche Entera | <f2>"];
+    node0x5fcf6632dca0 [label="<f0> Mango | <f1> Yogurt Natural | <f2>"];
     node0x5fcf6632dca0:f0 -> node0x5fcf6632ca60;
     node0x5fcf6632ca60 [label="<f0> Pan Integral | <f1> Zanahoria | <f2> Tomate | <f3> Naranja | <f4>"];
     node0x5fcf6632dca0:f1 -> node0x5fcf663305d0;
-    node0x5fcf663305d0 [label="<f0> Cebolla | <f1> Platano | <f2> Queso Fresco | <f3> Yogurt Natural | <f4>"];
+    node0x5fcf663305d0 [label="<f0> Cebolla | <f1> Platano | <f2> Queso Fresco | <f3>"];
     node0x5fcf6632dca0:f2 -> node0x5fcf6632f9b0;
     node0x5fcf6632f9b0 [label="<f0> Papa | <f1> Jugo Naranja | <f2> Batido Chocolate | <f3>"];
     node0x5fcf66332420:f1 -> node0x5fcf66332720;

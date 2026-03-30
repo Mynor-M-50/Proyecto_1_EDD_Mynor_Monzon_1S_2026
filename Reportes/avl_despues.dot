@@ -1,7 +1,7 @@
 digraph AVL {
     node [shape=record, style=filled, fillcolor=lightblue];
     label="Arbol AVL de Productos";
-    node0x5fcf6632c990 [label="{ Leche Entera | FE: 0 }"];
+    node0x5fcf6632c990 [label="{ Mango | FE: 0 }"];
     node0x5fcf6632c990 -> node0x5fcf6632d8c0;
     node0x5fcf6632d8c0 [label="{ Avena Integral | FE: 0 }"];
     node0x5fcf6632d8c0 -> node0x5fcf6632d2a0;
@@ -23,13 +23,11 @@ digraph AVL {
     node0x5fcf66330b10 -> node0x5fcf663338b0;
     node0x5fcf663338b0 [label="{ Jugo Naranja | FE: 0 }"];
     node0x5fcf6632c990 -> node0x5fcf6632fef0;
-    node0x5fcf6632fef0 [label="{ Platano | FE: 0 }"];
-    node0x5fcf6632fef0 -> node0x5fcf6632f8e0;
-    node0x5fcf6632f8e0 [label="{ Naranja | FE: 1 }"];
-    node0x5fcf6632f8e0 -> node0x5fcf6632f2d0;
-    node0x5fcf6632f2d0 [label="{ Mango | FE: 0 }"];
-    node0x5fcf6632f8e0 -> node0x5fcf66330e20;
-    node0x5fcf66330e20 [label="{ Pan Integral | FE: 1 }"];
+    node0x5fcf6632fef0 [label="{ Platano | FE: 1 }"];
+    node0x5fcf6632fef0 -> node0x5fcf66330e20;
+    node0x5fcf66330e20 [label="{ Pan Integral | FE: 0 }"];
+    node0x5fcf66330e20 -> node0x5fcf6632f8e0;
+    node0x5fcf6632f8e0 [label="{ Naranja | FE: 0 }"];
     node0x5fcf66330e20 -> node0x5fcf66332f60;
     node0x5fcf66332f60 [label="{ Papa | FE: 0 }"];
     node0x5fcf6632fef0 -> node0x5fcf66330500;

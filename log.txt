@@ -29,3 +29,24 @@
 [INFO]El archivo fue cargado correctamente.
 [INFO]El archivo fue cargado correctamente.
 [INFO]El archivo fue cargado correctamente.
+[INFO]El archivo fue cargado correctamente.
+[INFO]Archivo cargado correctamente: productos.csv
+[INFO]Archivo cargado correctamente: productos.csv
+[INFO]Archivo cargado correctamente: productos.csv
+[INFO]Archivo cargado correctamente: productos.csv
+[INFO]Archivo cargado correctamente: productos.csv
+[INFO]Archivo cargado correctamente: productos.csv
+[INFO]Archivo cargado correctamente: productos.csv
+[INFO]Archivo cargado correctamente: productos.csv
+[INFO]Archivo cargado correctamente: productos.csv
+[INFO]Archivo cargado correctamente: productos.csv
+[INFO]Archivo cargado correctamente: productos.csv
+[INFO]Archivo cargado correctamente: productos.csv
+[INFO]Archivo cargado correctamente: productos.csv
+[INFO]Archivo cargado correctamente: productos.csv
+[ERROR]No pudo abrirse el archivo: a
+[INFO]Archivo cargado correctamente: productos.csv
+[INFO]Archivo cargado correctamente: productos.csv
+[ERROR]No pudo abrirse el archivo: 101
+[INFO]Archivo cargado correctamente: productos.csv
+[ERROR]No pudo abrirse el archivo: 2. Buscar Producto

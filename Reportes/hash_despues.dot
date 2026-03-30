@@ -2,9 +2,7 @@ digraph TablaHash {
     rankdir=LR;
     node [shape=record];
     label="Tabla Hash (Encadenamiento)";
-    indices [label="<f23> [23] | <f24> [24] | <f25> [25] | <f26> [26] | <f27> [27] | <f28> [28] | <f29> [29] | <f30> [30] | <f31> [31] | <f55> [55] | <f56> [56] | <f57> [57] | <f58> [58] | <f59> [59] | <f60> [60] | <f61> [61] | <f62> [62] | <f63> [63] | <f64> [64] | <f88> [88]"];
-    indices:f23 -> node0x5fcf6632d060;
-    node0x5fcf6632d060 [label="{ Leche Entera | 101 }"];
+    indices [label="<f24> [24] | <f25> [25] | <f26> [26] | <f27> [27] | <f28> [28] | <f29> [29] | <f30> [30] | <f31> [31] | <f55> [55] | <f56> [56] | <f57> [57] | <f58> [58] | <f59> [59] | <f60> [60] | <f61> [61] | <f62> [62] | <f63> [63] | <f64> [64] | <f88> [88]"];
     indices:f24 -> node0x5fcf6632d370;
     node0x5fcf6632d370 [label="{ Arroz Blanco | 102 }"];
     indices:f25 -> node0x5fcf6632d680;

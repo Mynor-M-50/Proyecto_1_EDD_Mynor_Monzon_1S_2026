@@ -28,4 +28,5 @@ add_executable(Proyecto_1
         Utils/Benchmark.h
         Utils/Benchmark.cpp
         main.cpp
+        Estructuras/Pila.h
 )

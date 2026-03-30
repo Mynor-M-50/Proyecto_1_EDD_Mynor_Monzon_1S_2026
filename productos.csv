@@ -1,11 +1,21 @@
-codigo,nombre,precio
-101,Leche,12.50
-102,Arroz,8.00
-103,Zanahoria,3.25
-104,Avena,15.00
-105,Aceite,22.00
-106,Batido,18.50
-107,Cereal,25.00
-108,Mango,5.00
-109,Naranja,2.50
-110,Platano,1.50
+codigoBarras,nombre,categoria,fechaVencimiento,marca,precio,stock
+101,Leche Entera,Lacteos,2026-05-10,Dos Pinos,12.50,100
+102,Arroz Blanco,Granos,2027-01-15,Tio Pelon,8.00,200
+103,Zanahoria,Verduras,2026-04-05,Campo Verde,3.25,150
+104,Avena Integral,Cereales,2026-08-20,Quaker,15.00,80
+105,Aceite Vegetal,Aceites,2027-03-01,Clover,22.00,60
+106,Batido Chocolate,Lacteos,2026-06-15,Dos Pinos,18.50,90
+107,Cereal Maiz,Cereales,2026-09-30,Kelloggs,25.00,70
+108,Mango,Frutas,2026-04-12,Campo Verde,5.00,120
+109,Naranja,Frutas,2026-04-08,Campo Verde,2.50,200
+110,Platano,Frutas,2026-04-20,Campo Verde,1.50,300
+111,Yogurt Natural,Lacteos,2026-05-01,Dos Pinos,9.75,110
+112,Frijoles Negros,Granos,2027-02-10,Tio Pelon,6.50,180
+113,Pan Integral,Panaderia,2026-04-03,Bimbo,4.25,50
+114,Queso Fresco,Lacteos,2026-04-25,Dos Pinos,14.00,75
+115,Atun en Lata,Enlatados,2028-01-01,Sardimar,11.00,130
+116,Tomate,Verduras,2026-04-07,Campo Verde,2.75,160
+117,Papa,Verduras,2026-05-15,Campo Verde,3.00,140
+118,Cebolla,Verduras,2026-04-18,Campo Verde,2.00,170
+119,Jugo Naranja,Bebidas,2026-06-01,Del Monte,8.75,95
+120,Agua Purificada,Bebidas,2027-12-31,Crystal,3.50,500
