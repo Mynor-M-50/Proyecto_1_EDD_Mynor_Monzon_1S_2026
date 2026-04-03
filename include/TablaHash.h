@@ -8,7 +8,7 @@
 #include <iostream>
 #include <string>
 #include "ListaEnlazada.h"
-#include "../Modelo/Producto.h"
+#include "Producto.h"
 
 class TablaHash {
 private:

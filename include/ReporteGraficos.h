@@ -5,11 +5,11 @@
 #ifndef REPORTE_GRAFICOS_H
 #define REPORTE_GRAFICOS_H
 
-#include "../Estructuras/ArbolAVL.h"
-#include "../Estructuras/ArbolB.h"
-#include "../Estructuras/ArbolBPlus.h"
-#include "../Estructuras/TablaHash.h"
-#include "../Estructuras/NodoListaEnlazada.h"
+#include "ArbolAVL.h"
+#include "ArbolB.h"
+#include "ArbolBPlus.h"
+#include "TablaHash.h"
+#include "NodoListaEnlazada.h"
 #include <fstream>
 #include <string>
 

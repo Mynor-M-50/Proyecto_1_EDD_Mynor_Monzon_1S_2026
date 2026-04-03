@@ -9,7 +9,7 @@
 #include <algorithm>
 #include <string>
 #include "NodoArbolBPlus.h"
-#include "../Modelo/Producto.h"
+#include "Producto.h"
 
 class ArbolBPlus {
 private:

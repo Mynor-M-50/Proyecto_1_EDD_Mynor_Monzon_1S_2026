@@ -3,29 +3,31 @@ project(Proyecto_1)
 
 set(CMAKE_CXX_STANDARD 14)
 
-include_directories(Estructuras)
+# Esto le dice a C++ que busque los archivos .h dentro de la carpeta 'include'
+include_directories(include)
 
+# Aquí listamos dónde están ahora tus archivos reales (.cpp y .h)
 add_executable(Proyecto_1
-        Estructuras/ArbolBPlus.h
-        Estructuras/ArbolB.h
-        Estructuras/ArbolAVL.h
-        Estructuras/ListaEnlazada.h
-        Estructuras/NodoListaEnlazada.h
-        Estructuras/TablaHash.h
-        Graficos/ReporteGraficos.h
-        Graficos/ReporteGraficos.cpp
-        Estructuras/NodoArbolB.h
-        Estructuras/NodoArbolAVL.h
-        Estructuras/NodoArbolBPlus.h
-        Carga/CSVLoader.h
-        Carga/CSVLoader.cpp
-        Catalogo/Catalogo.h
-        Catalogo/Catalogo.cpp
-        Modelo/Producto.h
-        Utils/Logger.h
-        Utils/Logger.cpp
-        Utils/Benchmark.h
-        Utils/Benchmark.cpp
         main.cpp
-        Estructuras/Pila.h
+        src/ReporteGraficos.cpp
+        src/CSVLoader.cpp
+        src/Catalogo.cpp
+        src/Logger.cpp
+        src/Benchmark.cpp
+        include/ArbolBPlus.h
+        include/ArbolB.h
+        include/ArbolAVL.h
+        include/ListaEnlazada.h
+        include/NodoListaEnlazada.h
+        include/TablaHash.h
+        include/ReporteGraficos.h
+        include/NodoArbolB.h
+        include/NodoArbolAVL.h
+        include/NodoArbolBPlus.h
+        include/CSVLoader.h
+        include/Catalogo.h
+        include/Producto.h
+        include/Logger.h
+        include/Benchmark.h
+        include/Pila.h
 )

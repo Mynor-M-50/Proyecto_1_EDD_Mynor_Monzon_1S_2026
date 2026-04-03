@@ -5,7 +5,7 @@
 #ifndef NODO_ARBOL_AVL_H
 #define NODO_ARBOL_AVL_H
 
-#include "../Modelo/Producto.h"
+#include "Producto.h"
 
 class NodoArbolAVL {
 private:

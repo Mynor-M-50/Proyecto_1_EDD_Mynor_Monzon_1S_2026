@@ -4,11 +4,11 @@
 
 #include <iostream>
 #include <string>
-#include "Catalogo/Catalogo.h"
-#include "Carga/CSVLoader.h"
-#include "Utils/Logger.h"
-#include "Graficos/ReporteGraficos.h"
-#include "Utils/Benchmark.h"
+#include "include/Catalogo.h"
+#include "include/CSVLoader.h"
+#include "include/Logger.h"
+#include "include/ReporteGraficos.h"
+#include "include/Benchmark.h"
 
 Catalogo catalogo;
 Logger logger;

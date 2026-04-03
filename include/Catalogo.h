@@ -5,13 +5,13 @@
 #ifndef CATALOGO_H
 #define CATALOGO_H
 
-#include "../Modelo/Producto.h"
-#include "../Estructuras/ListaEnlazada.h"
-#include "../Estructuras/ArbolAVL.h"
-#include "../Estructuras/ArbolB.h"
-#include "../Estructuras/ArbolBPlus.h"
-#include "../Estructuras/TablaHash.h"
-#include "../Estructuras/Pila.h"
+#include "Producto.h"
+#include "ListaEnlazada.h"
+#include "ArbolAVL.h"
+#include "ArbolB.h"
+#include "ArbolBPlus.h"
+#include "TablaHash.h"
+#include "Pila.h"
 
 class Catalogo {
 private:

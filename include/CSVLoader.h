@@ -9,8 +9,8 @@
 #include <fstream>
 #include <sstream>
 #include <string>
-#include "../Modelo/Producto.h"
-#include "../Utils/Logger.h"
+#include "Producto.h"
+#include "Logger.h"
 
 class CSVLoader {
 private:

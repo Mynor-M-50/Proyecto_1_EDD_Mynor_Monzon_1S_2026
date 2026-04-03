@@ -2,10 +2,10 @@
 // Created by mynorm50 on 7/3/26.
 //
 
-#include "ReporteGraficos.h"
-#include "../Estructuras/NodoArbolAVL.h"
-#include "../Estructuras/NodoArbolB.h"
-#include "../Estructuras/NodoArbolBPlus.h"
+#include "../include/ReporteGraficos.h"
+#include "../include/NodoArbolAVL.h"
+#include "NodoArbolB.h"
+#include "NodoArbolBPlus.h"
 #include <fstream>
 #include <cstdlib>
 #include <string>

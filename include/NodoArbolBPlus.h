@@ -5,7 +5,7 @@
 #ifndef NODO_ARBOL_B_PLUS_H
 #define NODO_ARBOL_B_PLUS_H
 
-#include "../Modelo/Producto.h"
+#include "Producto.h"
 
 const int ORDEN_BP = 2;
 const int MAX_LLAVES_BP = 2 * ORDEN_BP;

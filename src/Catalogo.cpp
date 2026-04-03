@@ -2,7 +2,7 @@
 // Created by mynorm50 on 16/3/26.
 //
 
-#include "Catalogo.h"
+#include "../include/Catalogo.h"
 #include <iostream>
 
 Catalogo::Catalogo() {}

@@ -10,7 +10,7 @@
 #include <cctype>
 #include <string>
 #include "NodoArbolB.h"
-#include "../Modelo/Producto.h"
+#include "Producto.h"
 
 class ArbolB {
 private:
