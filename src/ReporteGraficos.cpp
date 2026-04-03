@@ -19,6 +19,7 @@ void ReporteGraficos::generarAVL(ArbolAVL& arbol, const std::string& nombre) {
 
     std::string dotFile = "Reportes/" + nombre + ".dot";
     std::string pngFile = "Reportes/" + nombre + ".png";
+    std::string svgFile = "Reportes/" + nombre + ".svg";
 
     std::ofstream archivo(dotFile);
     if (!archivo.is_open()) {
@@ -37,6 +38,11 @@ void ReporteGraficos::generarAVL(ArbolAVL& arbol, const std::string& nombre) {
 
     std::string cmd = "dot -Tpng " + dotFile + " -o " + pngFile;
     system(cmd.c_str());
+
+    // Generar SVG (para zoom)
+    std::string cmdSVG = "dot -Tsvg " + dotFile + " -o " + svgFile;
+    system(cmdSVG.c_str());
+
     std::cout << "[INFO] Imagen " << pngFile << " generada con exito.\n";
 }
 
@@ -67,6 +73,7 @@ void ReporteGraficos::generarArbolB(ArbolB& arbol, const std::string& nombre) {
 
     std::string dotFile = "Reportes/" + nombre + ".dot";
     std::string pngFile = "Reportes/" + nombre + ".png";
+    std::string svgFile = "Reportes/" + nombre + ".svg";
 
     std::ofstream archivo(dotFile);
     if (!archivo.is_open()) {
@@ -85,6 +92,11 @@ void ReporteGraficos::generarArbolB(ArbolB& arbol, const std::string& nombre) {
 
     std::string cmd = "dot -Tpng " + dotFile + " -o " + pngFile;
     system(cmd.c_str());
+
+    // Generar SVG (para zoom)
+    std::string cmdSVG = "dot -Tsvg " + dotFile + " -o " + svgFile;
+    system(cmdSVG.c_str());
+
     std::cout << "[INFO] Imagen " << pngFile << " generada con exito.\n";
 }
 
@@ -121,6 +133,7 @@ void ReporteGraficos::generarArbolBPlus(ArbolBPlus& arbol, const std::string& no
 
     std::string dotFile = "Reportes/" + nombre + ".dot";
     std::string pngFile = "Reportes/" + nombre + ".png";
+    std::string svgFile = "Reportes/" + nombre + ".svg";
 
     std::ofstream archivo(dotFile);
     if (!archivo.is_open()) {
@@ -166,6 +179,11 @@ void ReporteGraficos::generarArbolBPlus(ArbolBPlus& arbol, const std::string& no
 
     std::string cmd = "dot -Tpng " + dotFile + " -o " + pngFile;
     system(cmd.c_str());
+
+    // Generar SVG (para zoom)
+    std::string cmdSVG = "dot -Tsvg " + dotFile + " -o " + svgFile;
+    system(cmdSVG.c_str());
+
     std::cout << "[INFO] Imagen " << pngFile << " generada con exito.\n";
 }
 
@@ -208,6 +226,7 @@ void ReporteGraficos::generarTablaHash(TablaHash& hash, const std::string& nombr
 
     std::string dotFile = "Reportes/" + nombre + ".dot";
     std::string pngFile = "Reportes/" + nombre + ".png";
+    std::string svgFile = "Reportes/" + nombre + ".svg";
 
     std::ofstream archivo(dotFile);
     if (!archivo.is_open()) {
@@ -255,5 +274,10 @@ void ReporteGraficos::generarTablaHash(TablaHash& hash, const std::string& nombr
 
     std::string cmd = "dot -Tpng " + dotFile + " -o " + pngFile;
     system(cmd.c_str());
+
+    // Generar SVG (para zoom)
+    std::string cmdSVG = "dot -Tsvg " + dotFile + " -o " + svgFile;
+    system(cmdSVG.c_str());
+
     std::cout << "[INFO] Imagen " << pngFile << " generada con exito.\n";
 }
