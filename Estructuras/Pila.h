@@ -24,7 +24,7 @@ public:
     }
 
     // Push: Insertar al principio (O(1))
-    void push(T valor) {
+    void push(const T& valor) {
         NodoListaEnlazada<T>* nuevo = new NodoListaEnlazada<T>(valor);
         nuevo->setSiguiente(tope);
         tope = nuevo;

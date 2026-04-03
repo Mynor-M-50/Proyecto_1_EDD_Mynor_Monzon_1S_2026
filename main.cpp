@@ -57,12 +57,31 @@ void menuBusqueda() {
         case 2:
             std::cout << "Ingrese nombre: ";
             std::getline(std::cin, input);
-            timer.iniciar("Busqueda por nombre");
+
+            // Busquda secuencial (LISTA)
+            timer.iniciar("Busqueda Lista");
             {
-                Producto* p = catalogo.buscarPorNombre(input);
-                timer.finalizar();
-                if (p) std::cout << "Encontrado: " << p->nombre << " | " << p->categoria << "\n";
-                else std::cout << "[INFO] No encontrado.\n";
+            NodoListaEnlazada<Producto>* actual = catalogo.getListaOrdenada().getHead();
+            Producto* encontrado = nullptr;
+
+            while (actual != nullptr) {
+                if (actual->getValor().nombre == input) {
+                    encontrado = &actual->getValor();
+                    break;
+                }
+                actual = actual->getSiguiente();
+            }
+            timer.finalizar();
+            }
+
+            // Busqueda AVL
+            timer.iniciar("Busqueda AVL");
+            {
+            Producto* p = catalogo.buscarPorNombre(input);
+            timer.finalizar();
+
+            if (p) std::cout << "Encontrado: " << p->nombre << " | " << p->categoria << "\n";
+            else std::cout << "[INFO] No encontrado.\n";
             }
             break;
         case 3:
@@ -90,7 +109,7 @@ void menuBusqueda() {
 }
 
 void validarConsistencia(ArbolAVL& avl, ArbolB& b, ArbolBPlus& bplus, ListaEnlazada<Producto>& lista) {
-    std::cout << "\n--- INICIANDO VALIDACION DE CONSISTENCIA ---\n";
+    std::cout << "\n--- Iniciando validacion de consistencia ---\n";
 
     int errores = 0;
     int totalValidados = 0;
@@ -106,12 +125,14 @@ void validarConsistencia(ArbolAVL& avl, ArbolB& b, ArbolBPlus& bplus, ListaEnlaz
         }
 
         if (b.buscar(prod.fechaVencimiento) == nullptr) {
-            std::cout << "[ERROR] " << prod.nombre << " no se localiza por fecha en Arbol B\n";
+            std::cout << "[WARNING] " << prod.nombre
+                    << " no encontrado en Arbol B (posible colision por fecha)\n";
             errores++;
         }
 
         if (bplus.buscar(prod.categoria) == nullptr) {
-            std::cout << "[ERROR] " << prod.nombre << " no se localiza por categoria en Arbol B+\n";
+            std::cout << "[WARNING] " << prod.nombre
+                    << " no encontrado en Arbol B+ (posible agrupacion por categoria)\n";
             errores++;
         }
 
@@ -122,9 +143,9 @@ void validarConsistencia(ArbolAVL& avl, ArbolB& b, ArbolBPlus& bplus, ListaEnlaz
     std::cout << "\nTotal validados: " << totalValidados << "\n";
 
     if (errores == 0) {
-        std::cout << "✅ EXITO: todas las estructuras responden correctamente.\n";
+        std::cout << "EXITO: todas las estructuras responden correctamente.\n";
     } else {
-        std::cout << "❌ FALLO: se encontraron " << errores << " inconsistencias.\n";
+        std::cout << "FALLO: se encontraron " << errores << " inconsistencias.\n";
     }
 }
 
@@ -150,12 +171,17 @@ int main() {
                 std::string ruta;
                 std::getline(std::cin, ruta);
                 timer.iniciar("Carga");
-                loader.cargarArchivo(ruta, insertarEnCatalogo);
+                bool cargado = loader.cargarArchivo(ruta, insertarEnCatalogo);
                 timer.finalizar();
-                csvCargado = true;
-                logger.imprimirResumenCarga(catalogo.getListaOrdenada().getSize());
+                if (cargado) {
+                    csvCargado = true;
+                    logger.imprimirResumenCarga(catalogo.getListaOrdenada().getSize());
+                    validarConsistencia(catalogo.getAVL(), catalogo.getArbolB(), catalogo.getArbolBPlus(), catalogo.getListaOrdenada());
+                } else {
+                    std::cout << "[ERROR] No se pudo cargar el archivo.\n";
+                    csvCargado = false;
+                }
                 logger.resetContadores();
-                validarConsistencia(catalogo.getAVL(), catalogo.getArbolB(), catalogo.getArbolBPlus(), catalogo.getListaOrdenada());
                 break;
             }
             case 2: if(csvCargado) menuBusqueda(); else std::cout << "Cargue CSV primero.\n"; break;

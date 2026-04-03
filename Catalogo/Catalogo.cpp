@@ -8,7 +8,6 @@
 Catalogo::Catalogo() {}
 
 bool Catalogo::agregarProducto(const Producto& p) {
-
     // Validacin: evitar duplicados usando hash
     if (hash.buscar(p.codigoBarras) != nullptr) {
         return false;
@@ -18,15 +17,18 @@ bool Catalogo::agregarProducto(const Producto& p) {
     lista.insertarAlFinal(p);
     listaOrdenada.insertarOrdenadoPorNombre(p);
 
-    if (!avl.insertar(p)) {
-        lista.eliminarPorCodigo(p.codigoBarras);
-        listaOrdenada.eliminarPorCodigo(p.codigoBarras);
-        std::cout << "[ERROR] Fallo AVL, rollback aplicado: " << p.nombre << "\n";
-        return false;
+    bool insertadoAVL = avl.insertar(p);
+
+    if (!insertadoAVL) {
+        std::cout << "[WARNING] Nombre duplicado en AVL, no indexado: "
+            << p.nombre << "\n";
     }
 
+    // Nota: Arbol B y B+ indexan por claves no unicas (fecha y categoria)
+    // Por lo tanto, pueden existir multiples productos bajo la misma clave
     arbolB.insertar(p);
     arbolBPlus.insertar(p);
+
     hash.insertar(p);
 
     return true;

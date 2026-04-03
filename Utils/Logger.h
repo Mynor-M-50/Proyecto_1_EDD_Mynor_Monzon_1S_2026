@@ -15,6 +15,10 @@ private:
 public:
     Logger(const std::string& nombreArchivo = "log.txt") {
         archivo.open(nombreArchivo, std::ios::trunc);
+
+        if (!archivo.is_open()) {
+            std::cerr << "[ERROR] No se pudo abrir log.txt\n";
+        }
     }
 
     ~Logger() {

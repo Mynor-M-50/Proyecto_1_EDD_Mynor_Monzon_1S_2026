@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 4.1)
+cmake_minimum_required(VERSION 3.28)
 project(Proyecto_1)
 
 set(CMAKE_CXX_STANDARD 14)
@@ -28,5 +28,4 @@ add_executable(Proyecto_1
         Utils/Benchmark.cpp
         main.cpp
         Estructuras/Pila.h
-        generador.cpp
 )

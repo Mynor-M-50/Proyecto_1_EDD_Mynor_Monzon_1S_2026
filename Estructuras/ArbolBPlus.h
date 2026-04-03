@@ -291,7 +291,7 @@ private:
             if (idx > 0 && nodo->getHijo(idx - 1)->getNumLlaves() > ORDEN_BP)
                 prestarHojaAnterior(nodo, idx);
             else if (idx < nodo->getNumLlaves() && nodo->getHijo(idx + 1)->getNumLlaves() > ORDEN_BP)
-                prestarInternoSiguiente(nodo, idx);
+                prestarHojaSiguiente(nodo, idx);
             else if (idx < nodo->getNumLlaves())
                 fusionarHojas(nodo, idx);
             else
