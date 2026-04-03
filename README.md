@@ -13,28 +13,28 @@ Aplicacion de consola en C++ que gestiona un catalogo de productos de supermerca
 
 ## Caracteristicas
 
-- ✅ Carga masiva desde archivos CSV (+1000 productos)
-- ✅ Busqueda optimizada por codigo de barras (Hash - O(1) promedio)
-- ✅ Busqueda por nombre (AVL - O(log n))
-- ✅ Busqueda por categoria (Arbol B+ - O(log n + k))
-- ✅ Busqueda por rango de fechas (Arbol B - O(log n + k))
-- ✅ Eliminacion con rollback (Pila)
-- ✅ Medicion de tiempos de ejecucion (Benchmark)
-- ✅ Generacion de reportes visuales en PNG (Graphviz)
-- ✅ Validacion robusta de datos CSV
+- Carga masiva desde archivos CSV (+1000 productos)
+- Busqueda optimizada por codigo de barras (Hash - O(1) promedio)
+- Busqueda por nombre (AVL - O(log n))
+- Busqueda por categoria (Arbol B+ - O(log n + k))
+- Busqueda por rango de fechas (Arbol B - O(log n + k))
+- Eliminacion con rollback (Pila)
+- Medicion de tiempos de ejecucion (Benchmark)
+- Generacion de reportes visuales en PNG (Graphviz)
+- Validacion robusta de datos CSV
 
 
-## 📄 Documentacion
+## Documentacion
 
 - [ManualDeUsuarioProyecto1](ManualDeUsuarioProyecto1.pdf)
 - [TADSProyecto1](TADSProyecto1.pdf)
 - [ReporteTecnicoEDD](ReporteTecnicoEDD.pdf)
 
-## 📊 Diagrama de Clases (UML)
+## Diagrama de Clases (UML)
 
 ![DiagramaUMLProyecto1](DiagramaUMLProyecto1.png)
 
-## 🛠️ Requisitos Previos
+## Requisitos Previos
 
 - **Compilador:** g++ con soporte para C++11 o superior
 - **CMake:** (opcional, para compilacion automatica)
