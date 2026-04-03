@@ -1,0 +1,119 @@
+digraph ArbolBPlus {
+    label="Arbol B+ (d=2)";
+    rankdir=TB;
+    node0x57a7f1a3dba0 [style=filled, fillcolor=lightgreen, shape=plaintext, label=<
+        <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0">
+        <TR>
+            <TD PORT="f0">Leche Entera</TD>
+            <TD PORT="f1"> </TD>
+        </TR>
+        </TABLE>>];
+    node0x57a7f1a3dba0:f0 -> node0x57a7f1a396f0:f0;
+    node0x57a7f1a396f0 [style=filled, fillcolor=lightgreen, shape=plaintext, label=<
+        <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0">
+        <TR>
+            <TD PORT="f0">Azucar Morena</TD>
+            <TD PORT="f1">Manzana Roja</TD>
+            <TD PORT="f2">Naranja</TD>
+            <TD PORT="f3"> </TD>
+        </TR>
+        </TABLE>>];
+    node0x57a7f1a396f0:f0 -> node0x57a7f1a381b0:f0;
+    node0x57a7f1a381b0 [style=filled, fillcolor=palegreen, shape=plaintext, label=<
+        <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0">
+        <TR>
+            <TD PORT="f0">Cafe Molido</TD>
+            <TD PORT="f1">Te Verde</TD>
+            <TD PORT="f2">Agua Mineral</TD>
+            <TD PORT="f3"> </TD>
+        </TR>
+        </TABLE>>];
+    node0x57a7f1a396f0:f1 -> node0x57a7f1a3fe90:f0;
+    node0x57a7f1a3fe90 [style=filled, fillcolor=palegreen, shape=plaintext, label=<
+        <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0">
+        <TR>
+            <TD PORT="f0">Azucar Morena</TD>
+            <TD PORT="f1">Miel de Abeja</TD>
+            <TD PORT="f2"> </TD>
+        </TR>
+        </TABLE>>];
+    node0x57a7f1a396f0:f2 -> node0x57a7f1a3d590:f0;
+    node0x57a7f1a3d590 [style=filled, fillcolor=palegreen, shape=plaintext, label=<
+        <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0">
+        <TR>
+            <TD PORT="f0">Manzana Roja</TD>
+            <TD PORT="f1">Banana</TD>
+            <TD PORT="f2"> </TD>
+        </TR>
+        </TABLE>>];
+    node0x57a7f1a396f0:f3 -> node0x57a7f1a3ba50:f0;
+    node0x57a7f1a3ba50 [style=filled, fillcolor=palegreen, shape=plaintext, label=<
+        <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0">
+        <TR>
+            <TD PORT="f0">Naranja</TD>
+            <TD PORT="f1">Arroz Blanco</TD>
+            <TD PORT="f2">Frijol Negro</TD>
+            <TD PORT="f3">Lenteja</TD>
+            <TD PORT="f4"> </TD>
+        </TR>
+        </TABLE>>];
+    node0x57a7f1a3dba0:f1 -> node0x57a7f1a3dea0:f0;
+    node0x57a7f1a3dea0 [style=filled, fillcolor=lightgreen, shape=plaintext, label=<
+        <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0">
+        <TR>
+            <TD PORT="f0">Queso Amarillo</TD>
+            <TD PORT="f1">Pan Dulce</TD>
+            <TD PORT="f2">Galleta Oreo</TD>
+            <TD PORT="f3"> </TD>
+        </TR>
+        </TABLE>>];
+    node0x57a7f1a3dea0:f0 -> node0x57a7f1a3b130:f0;
+    node0x57a7f1a3b130 [style=filled, fillcolor=palegreen, shape=plaintext, label=<
+        <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0">
+        <TR>
+            <TD PORT="f0">Leche Entera</TD>
+            <TD PORT="f1">Yogurt Fresa</TD>
+            <TD PORT="f2"> </TD>
+        </TR>
+        </TABLE>>];
+    node0x57a7f1a3dea0:f1 -> node0x57a7f1a399f0:f0;
+    node0x57a7f1a399f0 [style=filled, fillcolor=palegreen, shape=plaintext, label=<
+        <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0">
+        <TR>
+            <TD PORT="f0">Queso Amarillo</TD>
+            <TD PORT="f1">Pan Integral</TD>
+            <TD PORT="f2"> </TD>
+        </TR>
+        </TABLE>>];
+    node0x57a7f1a3dea0:f2 -> node0x57a7f1a3e7b0:f0;
+    node0x57a7f1a3e7b0 [style=filled, fillcolor=palegreen, shape=plaintext, label=<
+        <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0">
+        <TR>
+            <TD PORT="f0">Pan Dulce</TD>
+            <TD PORT="f1">Baggette Frances</TD>
+            <TD PORT="f2">Chocolate Amargo</TD>
+            <TD PORT="f3"> </TD>
+        </TR>
+        </TABLE>>];
+    node0x57a7f1a3dea0:f3 -> node0x57a7f1a3f550:f0;
+    node0x57a7f1a3f550 [style=filled, fillcolor=palegreen, shape=plaintext, label=<
+        <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0">
+        <TR>
+            <TD PORT="f0">Galleta Oreo</TD>
+            <TD PORT="f1">Papas Fritas</TD>
+            <TD PORT="f2"> </TD>
+        </TR>
+        </TABLE>>];
+
+    // Enlace entre hojas
+    edge [color=red, style=dashed, constraint=false, weight=0];
+    { rank=same; node0x57a7f1a381b0; node0x57a7f1a3fe90; node0x57a7f1a3d590; node0x57a7f1a3ba50; node0x57a7f1a3b130; node0x57a7f1a399f0; node0x57a7f1a3e7b0; node0x57a7f1a3f550; }
+    node0x57a7f1a381b0 -> node0x57a7f1a3fe90 [dir=forward];
+    node0x57a7f1a3fe90 -> node0x57a7f1a3d590 [dir=forward];
+    node0x57a7f1a3d590 -> node0x57a7f1a3ba50 [dir=forward];
+    node0x57a7f1a3ba50 -> node0x57a7f1a3b130 [dir=forward];
+    node0x57a7f1a3b130 -> node0x57a7f1a399f0 [dir=forward];
+    node0x57a7f1a399f0 -> node0x57a7f1a3e7b0 [dir=forward];
+    node0x57a7f1a3e7b0 -> node0x57a7f1a3f550 [dir=forward];
+    edge [color=black, style=solid, constraint=true];
+}

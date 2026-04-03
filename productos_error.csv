@@ -19,7 +19,13 @@ Queso,017,Lacteos,2025-12-25,Local,3.0,12
 Chocolate,018,Snack,2025-11-20,Hershey,1.8,15
 Galleta,019,Snack,2025-11-22,Oreo,1.5,18
 Agua,020,Bebida,2025-12-30,Ciel,1.0,100
-Leche,001,Lacteos,2025-12-01,Nestle,1.0,10
-Pan,004,Panaderia,2025-11-01,Bimbo,1.1,30
 ,021,Fruta,2025-12-01,Dole,1.5,10
 Mango,022,Fruta,20251201,Dole,1.5,10
+Naranja,,Fruta,2025-12-05,Dole,-1.0,15
+Papaya,024,,2025-12-08,DelCampo,2.0,-5
+Sandia,025,Fruta,2025-12-10,,,20
+Leche,001,Lacteos,2025-12-01,Nestle,1.0,10
+Pan,004,Panaderia,2025-11-01,Bimbo,1.1,30
+Cafe,014,Bebida,2025-12-15,Nescafe,3.0,20
+Yogurt,016,Lacteos,2025-12-20,Dannon,1.0,22
+Agua,020,Bebida,2025-12-30,Ciel,1.0,100
