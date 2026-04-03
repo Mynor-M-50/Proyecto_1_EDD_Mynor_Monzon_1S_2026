@@ -11,7 +11,6 @@ bool Catalogo::agregarProducto(const Producto& p) {
 
     // Validacin: evitar duplicados usando hash
     if (hash.buscar(p.codigoBarras) != nullptr) {
-        std::cout << "[DUPLICADO] " << p.codigoBarras << " - " << p.nombre << "\n";
         return false;
     }
 

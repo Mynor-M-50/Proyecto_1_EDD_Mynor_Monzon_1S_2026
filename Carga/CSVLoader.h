@@ -19,7 +19,7 @@ private:
 public:
     CSVLoader(Logger* logger) : logger(logger) {}
 
-    bool cargarArchivo(const std::string& ruta, void(*callback)(const Producto&)) {
+    bool cargarArchivo(const std::string& ruta, bool(*callback)(const Producto&)) {
         std::ifstream archivo(ruta);
 
         if (!archivo.is_open()) {
@@ -39,14 +39,16 @@ public:
             std::stringstream ss(linea);
             std::string codigoBarras, nombre, categoria, fechaVencimiento, marca, precioStr, stockStr;
 
-            if (!std::getline(ss, codigoBarras,      ',')) continue;
-            if (!std::getline(ss, nombre,             ',')) continue;
-            if (!std::getline(ss, categoria,          ',')) continue;
-            if (!std::getline(ss, fechaVencimiento,   ',')) continue;
-            if (!std::getline(ss, marca,              ',')) continue;
-            if (!std::getline(ss, precioStr,          ',')) continue;
-            if (!std::getline(ss, stockStr,           ',')) continue;
-
+            if (!std::getline(ss, codigoBarras,      ',') ||
+                !std::getline(ss, nombre,             ',') ||
+                !std::getline(ss, categoria,          ',') ||
+                !std::getline(ss, fechaVencimiento,   ',') ||
+                !std::getline(ss, marca,              ',') ||
+                !std::getline(ss, precioStr,          ',') ||
+                !std::getline(ss, stockStr,           ',')) {
+                logger->errorFormato("Linea " + std::to_string(lineaNum) + ": formato incompleto");
+                continue;
+    }
             try {
                 Producto p;
                 p.codigoBarras    = codigoBarras;
@@ -83,7 +85,9 @@ public:
                     continue;
                     }
 
-                callback(p);
+                if (!callback(p)) {
+                    logger->errorDuplicado("Linea " + std::to_string(lineaNum) + ": duplicado - " + p.codigoBarras);
+                }
 
             } catch (...) {
                 logger->error("Error en linea " + std::to_string(lineaNum) + ": " + linea);

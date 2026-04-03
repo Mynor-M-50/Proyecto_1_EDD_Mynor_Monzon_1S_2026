@@ -1,21 +1,68 @@
 codigoBarras,nombre,categoria,fechaVencimiento,marca,precio,stock
-101,Leche Entera,Lacteos,2026-05-10,Dos Pinos,12.50,100
-102,Arroz Blanco,Granos,2027-01-15,Tio Pelon,8.00,200
-103,Zanahoria,Verduras,2026-04-05,Campo Verde,3.25,150
-104,Avena Integral,Cereales,2026-08-20,Quaker,15.00,80
-105,Aceite Vegetal,Aceites,2027-03-01,Clover,22.00,60
-106,Batido Chocolate,Lacteos,2026-06-15,Dos Pinos,18.50,90
-107,Cereal Maiz,Cereales,2026-09-30,Kelloggs,25.00,70
-108,Mango,Frutas,2026-04-12,Campo Verde,5.00,120
-109,Naranja,Frutas,2026-04-08,Campo Verde,2.50,200
-110,Platano,Frutas,2026-04-20,Campo Verde,1.50,300
-111,Yogurt Natural,Lacteos,2026-05-01,Dos Pinos,9.75,110
-112,Frijoles Negros,Granos,2027-02-10,Tio Pelon,6.50,180
-113,Pan Integral,Panaderia,2026-04-03,Bimbo,4.25,50
-114,Queso Fresco,Lacteos,2026-04-25,Dos Pinos,14.00,75
-115,Atun en Lata,Enlatados,2028-01-01,Sardimar,11.00,130
-116,Tomate,Verduras,2026-04-07,Campo Verde,2.75,160
-117,Papa,Verduras,2026-05-15,Campo Verde,3.00,140
-118,Cebolla,Verduras,2026-04-18,Campo Verde,2.00,170
-119,Jugo Naranja,Bebidas,2026-06-01,Del Monte,8.75,95
-120,Agua Purificada,Bebidas,2027-12-31,Crystal,3.50,500
+001,Manzana,Fruta,2025-12-01,Dole,1.5,10
+002,Banana,Fruta,2025-12-02,Dole,1.2,15
+003,Leche,Lacteos,2025-11-01,Nestle,0.9,20
+004,Pan,Panaderia,2025-10-10,Bimbo,1.1,30
+005,Huevo,Granja,2025-09-01,Local,2.5,50
+
+006,,Fruta,2025-12-01,Dole,1.5,10
+007,Naranja,Fruta,2025-12-01,Dole,-1.5,10
+008,Pera,Fruta,2025-12-01,Dole,1.5,-5
+009,Uva,Fruta,20251201,Dole,1.5,10
+010,Mango,Fruta,2025-12-01,Dole,abc,10
+
+011,Sandia,Fruta,2025-12-01,Dole,1.5,10
+012,Melon,Fruta,2025-12-01,Dole,1.5,10
+013,Papaya,Fruta,2025-12-01,Dole,1.5,10
+
+014,Kiwi,Fruta,2025-12-01,Dole,1.5
+015,Piña,Fruta,2025-12-01,Dole
+016,Coco,Fruta,2025-12-01
+017,Fresa,Fruta
+
+018,Tomate,Vegetal,2025-12-01,Local,1.0,10
+019,Cebolla,Vegetal,2025-12-01,Local,1.0,10
+020,Ajo,Vegetal,2025-12-01,Local,1.0,10
+
+021,Zanahoria,Vegetal,2025-12-01,Local,1.0,10
+022,Lechuga,Vegetal,2025-12-01,Local,1.0,10
+023,Repollo,Vegetal,2025-12-01,Local,1.0,10
+
+024,Arroz,Grano,2025-12-01,DelCampo,2.0,50
+025,Frijol,Grano,2025-12-01,DelCampo,2.0,50
+026,Lenteja,Grano,2025-12-01,DelCampo,2.0,50
+
+027,Azucar,Endulzante,2025-12-01,DelCampo,2.0,50
+028,Sal,Endulzante,2025-12-01,DelCampo,2.0,50
+029,Miel,Endulzante,2025-12-01,DelCampo,2.0,50
+
+030,Cafe,Bebida,2025-12-01,Nescafe,3.0,20
+031,Te,Bebida,2025-12-01,Lipton,2.0,20
+032,Jugo,Bebida,2025-12-01,DelValle,2.5,20
+
+033,Agua,Bebida,2025-12-01,Ciel,1.0,100
+034,Soda,Bebida,2025-12-01,CocaCola,1.5,100
+
+035,Galleta,Snack,2025-12-01,Oreo,1.2,30
+036,Chocolate,Snack,2025-12-01,Hershey,1.8,30
+
+037,Papas,Snack,2025-12-01,Lays,1.3,30
+038,Nachos,Snack,2025-12-01,Doritos,1.4,30
+
+039,Helado,Postre,2025-12-01,Magnum,2.5,10
+040,Pastel,Postre,2025-12-01,Local,5.0,5
+
+041,Flan,Postre,2025-12-01,Local,2.0,10
+042,Gelatina,Postre,2025-12-01,Local,1.0,10
+
+043,Yogurt,Lacteos,2025-12-01,Dannon,1.0,20
+044,Queso,Lacteos,2025-12-01,Local,3.0,15
+
+045,Mantequilla,Lacteos,2025-12-01,Local,2.5,10
+046,Crema,Lacteos,2025-12-01,Local,2.0,10
+
+047,Harina,Grano,2025-12-01,DelCampo,2.0,50
+048,Avena,Grano,2025-12-01,DelCampo,2.0,50
+
+049,Cereal,Desayuno,2025-12-01,Kellogs,3.0,25
+050,Granola,Desayuno,2025-12-01,Local,3.5,25

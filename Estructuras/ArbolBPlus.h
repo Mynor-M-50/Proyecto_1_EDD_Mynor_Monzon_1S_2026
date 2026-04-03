@@ -135,7 +135,7 @@ private:
         // Actualizar índice en el padre
         padre->setLlave(idx - 1, hijo->getLlave(0));
     }
-ÁRBOL
+
     // Prestamo del hermano derecho (hoja)
     void prestarHojaSiguiente(NodoArbolBPlus* padre, int idx) {
         NodoArbolBPlus* hijo    = padre->getHijo(idx);
@@ -291,7 +291,7 @@ private:
             if (idx > 0 && nodo->getHijo(idx - 1)->getNumLlaves() > ORDEN_BP)
                 prestarHojaAnterior(nodo, idx);
             else if (idx < nodo->getNumLlaves() && nodo->getHijo(idx + 1)->getNumLlaves() > ORDEN_BP)
-                prestarHojaSiguiente(nodo, idx);
+                prestarInternoSiguiente(nodo, idx);
             else if (idx < nodo->getNumLlaves())
                 fusionarHojas(nodo, idx);
             else

@@ -1,0 +1,246 @@
+digraph ArbolBPlus {
+    label="Arbol B+ (d=2)";
+    rankdir=TB;
+    node0x5d8329dc1df0 [style=filled, fillcolor=lightgreen, shape=plaintext, label=<
+        <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0">
+        <TR>
+            <TD PORT="f0">Helado</TD>
+            <TD PORT="f1"> </TD>
+        </TR>
+        </TABLE>>];
+    node0x5d8329dc1df0:f0 -> node0x5d8329db9b90:f0;
+    node0x5d8329db9b90 [style=filled, fillcolor=lightgreen, shape=plaintext, label=<
+        <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0">
+        <TR>
+            <TD PORT="f0">Banana</TD>
+            <TD PORT="f1">Huevo</TD>
+            <TD PORT="f2">Hola</TD>
+            <TD PORT="f3"> </TD>
+        </TR>
+        </TABLE>>];
+    node0x5d8329db9b90:f0 -> node0x5d8329db6740:f0;
+    node0x5d8329db6740 [style=filled, fillcolor=lightgreen, shape=plaintext, label=<
+        <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0">
+        <TR>
+            <TD PORT="f0">Jugo</TD>
+            <TD PORT="f1">Azucar</TD>
+            <TD PORT="f2">Miel</TD>
+            <TD PORT="f3"> </TD>
+        </TR>
+        </TABLE>>];
+    node0x5d8329db6740:f0 -> node0x5d8329db5200:f0;
+    node0x5d8329db5200 [style=filled, fillcolor=palegreen, shape=plaintext, label=<
+        <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0">
+        <TR>
+            <TD PORT="f0">Cafe</TD>
+            <TD PORT="f1">Te</TD>
+            <TD PORT="f2">Soda</TD>
+            <TD PORT="f3"> </TD>
+        </TR>
+        </TABLE>>];
+    node0x5d8329db6740:f1 -> node0x5d8329dbe130:f0;
+    node0x5d8329dbe130 [style=filled, fillcolor=palegreen, shape=plaintext, label=<
+        <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0">
+        <TR>
+            <TD PORT="f0">Jugo</TD>
+            <TD PORT="f1">Agua</TD>
+            <TD PORT="f2">Cereal</TD>
+            <TD PORT="f3">Granola</TD>
+            <TD PORT="f4"> </TD>
+        </TR>
+        </TABLE>>];
+    node0x5d8329db6740:f2 -> node0x5d8329dbd210:f0;
+    node0x5d8329dbd210 [style=filled, fillcolor=palegreen, shape=plaintext, label=<
+        <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0">
+        <TR>
+            <TD PORT="f0">Azucar</TD>
+            <TD PORT="f1">Sal</TD>
+            <TD PORT="f2"> </TD>
+        </TR>
+        </TABLE>>];
+    node0x5d8329db6740:f3 -> node0x5d8329dbc8f0:f0;
+    node0x5d8329dbc8f0 [style=filled, fillcolor=palegreen, shape=plaintext, label=<
+        <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0">
+        <TR>
+            <TD PORT="f0">Miel</TD>
+            <TD PORT="f1">Manzana</TD>
+            <TD PORT="f2"> </TD>
+        </TR>
+        </TABLE>>];
+    node0x5d8329db9b90:f1 -> node0x5d8329dbd820:f0;
+    node0x5d8329dbd820 [style=filled, fillcolor=lightgreen, shape=plaintext, label=<
+        <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0">
+        <TR>
+            <TD PORT="f0">Sandia</TD>
+            <TD PORT="f1"> </TD>
+        </TR>
+        </TABLE>>];
+    node0x5d8329dbd820:f0 -> node0x5d8329dbb9d0:f0;
+    node0x5d8329dbb9d0 [style=filled, fillcolor=palegreen, shape=plaintext, label=<
+        <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0">
+        <TR>
+            <TD PORT="f0">Banana</TD>
+            <TD PORT="f1">Melon</TD>
+            <TD PORT="f2"> </TD>
+        </TR>
+        </TABLE>>];
+    node0x5d8329dbd820:f1 -> node0x5d8329db7410:f0;
+    node0x5d8329db7410 [style=filled, fillcolor=palegreen, shape=plaintext, label=<
+        <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0">
+        <TR>
+            <TD PORT="f0">Sandia</TD>
+            <TD PORT="f1">Papaya</TD>
+            <TD PORT="f2"> </TD>
+        </TR>
+        </TABLE>>];
+    node0x5d8329db9b90:f2 -> node0x5d8329dbbfe0:f0;
+    node0x5d8329dbbfe0 [style=filled, fillcolor=lightgreen, shape=plaintext, label=<
+        <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0">
+        <TR>
+            <TD PORT="f0">Frijol</TD>
+            <TD PORT="f1">Leche</TD>
+            <TD PORT="f2"> </TD>
+        </TR>
+        </TABLE>>];
+    node0x5d8329dbbfe0:f0 -> node0x5d8329dba4a0:f0;
+    node0x5d8329dba4a0 [style=filled, fillcolor=palegreen, shape=plaintext, label=<
+        <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0">
+        <TR>
+            <TD PORT="f0">Huevo</TD>
+            <TD PORT="f1">Arroz</TD>
+            <TD PORT="f2">Harina</TD>
+            <TD PORT="f3"> </TD>
+        </TR>
+        </TABLE>>];
+    node0x5d8329dbbfe0:f1 -> node0x5d8329dc2d00:f0;
+    node0x5d8329dc2d00 [style=filled, fillcolor=palegreen, shape=plaintext, label=<
+        <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0">
+        <TR>
+            <TD PORT="f0">Frijol</TD>
+            <TD PORT="f1">Lenteja</TD>
+            <TD PORT="f2">Avena</TD>
+            <TD PORT="f3"> </TD>
+        </TR>
+        </TABLE>>];
+    node0x5d8329dbbfe0:f2 -> node0x5d8329db6a40:f0;
+    node0x5d8329db6a40 [style=filled, fillcolor=palegreen, shape=plaintext, label=<
+        <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0">
+        <TR>
+            <TD PORT="f0">Leche</TD>
+            <TD PORT="f1">Yogurt</TD>
+            <TD PORT="f2">Crema</TD>
+            <TD PORT="f3"> </TD>
+        </TR>
+        </TABLE>>];
+    node0x5d8329db9b90:f3 -> node0x5d8329dc3310:f0;
+    node0x5d8329dc3310 [style=filled, fillcolor=lightgreen, shape=plaintext, label=<
+        <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0">
+        <TR>
+            <TD PORT="f0">Hola</TD>
+            <TD PORT="f1"> </TD>
+        </TR>
+        </TABLE>>];
+    node0x5d8329dc3310:f0 -> node0x5d8329dc23f0:f0;
+    node0x5d8329dc23f0 [style=filled, fillcolor=palegreen, shape=plaintext, label=<
+        <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0">
+        <TR>
+            <TD PORT="f0">Queso</TD>
+            <TD PORT="f1">Mantequilla</TD>
+            <TD PORT="f2"> </TD>
+        </TR>
+        </TABLE>>];
+    node0x5d8329dc3310:f1 -> node0x5d8329dc11d0:f0;
+    node0x5d8329dc11d0 [style=filled, fillcolor=palegreen, shape=plaintext, label=<
+        <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0">
+        <TR>
+            <TD PORT="f0">Hola</TD>
+            <TD PORT="f1">Pan</TD>
+            <TD PORT="f2">Pastel</TD>
+            <TD PORT="f3"> </TD>
+        </TR>
+        </TABLE>>];
+    node0x5d8329dc1df0:f1 -> node0x5d8329dc20f0:f0;
+    node0x5d8329dc20f0 [style=filled, fillcolor=lightgreen, shape=plaintext, label=<
+        <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0">
+        <TR>
+            <TD PORT="f0">Tomate</TD>
+            <TD PORT="f1"> </TD>
+        </TR>
+        </TABLE>>];
+    node0x5d8329dc20f0:f0 -> node0x5d8329dc17e0:f0;
+    node0x5d8329dc17e0 [style=filled, fillcolor=lightgreen, shape=plaintext, label=<
+        <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0">
+        <TR>
+            <TD PORT="f0">Galleta</TD>
+            <TD PORT="f1"> </TD>
+        </TR>
+        </TABLE>>];
+    node0x5d8329dc17e0:f0 -> node0x5d8329dbff90:f0;
+    node0x5d8329dbff90 [style=filled, fillcolor=palegreen, shape=plaintext, label=<
+        <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0">
+        <TR>
+            <TD PORT="f0">Helado</TD>
+            <TD PORT="f1">Flan</TD>
+            <TD PORT="f2">Gelatina</TD>
+            <TD PORT="f3">Chocolate</TD>
+            <TD PORT="f4"> </TD>
+        </TR>
+        </TABLE>>];
+    node0x5d8329dc17e0:f1 -> node0x5d8329dbea50:f0;
+    node0x5d8329dbea50 [style=filled, fillcolor=palegreen, shape=plaintext, label=<
+        <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0">
+        <TR>
+            <TD PORT="f0">Galleta</TD>
+            <TD PORT="f1">Papas</TD>
+            <TD PORT="f2">Nachos</TD>
+            <TD PORT="f3">Ajo</TD>
+            <TD PORT="f4"> </TD>
+        </TR>
+        </TABLE>>];
+    node0x5d8329dc20f0:f1 -> node0x5d8329db9e90:f0;
+    node0x5d8329db9e90 [style=filled, fillcolor=lightgreen, shape=plaintext, label=<
+        <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0">
+        <TR>
+            <TD PORT="f0">Zanahoria</TD>
+            <TD PORT="f1"> </TD>
+        </TR>
+        </TABLE>>];
+    node0x5d8329db9e90:f0 -> node0x5d8329db8650:f0;
+    node0x5d8329db8650 [style=filled, fillcolor=palegreen, shape=plaintext, label=<
+        <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0">
+        <TR>
+            <TD PORT="f0">Tomate</TD>
+            <TD PORT="f1">Cebolla</TD>
+            <TD PORT="f2">Repollo</TD>
+            <TD PORT="f3"> </TD>
+        </TR>
+        </TABLE>>];
+    node0x5d8329db9e90:f1 -> node0x5d8329db9580:f0;
+    node0x5d8329db9580 [style=filled, fillcolor=palegreen, shape=plaintext, label=<
+        <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0">
+        <TR>
+            <TD PORT="f0">Zanahoria</TD>
+            <TD PORT="f1">Lechuga</TD>
+            <TD PORT="f2"> </TD>
+        </TR>
+        </TABLE>>];
+
+    // Enlace entre hojas
+    edge [color=red, style=dashed, constraint=false, weight=0];
+    { rank=same; node0x5d8329db5200; node0x5d8329dbe130; node0x5d8329dbd210; node0x5d8329dbc8f0; node0x5d8329dbb9d0; node0x5d8329db7410; node0x5d8329dba4a0; node0x5d8329dc2d00; node0x5d8329db6a40; node0x5d8329dc23f0; node0x5d8329dc11d0; node0x5d8329dbff90; node0x5d8329dbea50; node0x5d8329db8650; node0x5d8329db9580; }
+    node0x5d8329db5200 -> node0x5d8329dbe130 [dir=forward];
+    node0x5d8329dbe130 -> node0x5d8329dbd210 [dir=forward];
+    node0x5d8329dbd210 -> node0x5d8329dbc8f0 [dir=forward];
+    node0x5d8329dbc8f0 -> node0x5d8329dbb9d0 [dir=forward];
+    node0x5d8329dbb9d0 -> node0x5d8329db7410 [dir=forward];
+    node0x5d8329db7410 -> node0x5d8329dba4a0 [dir=forward];
+    node0x5d8329dba4a0 -> node0x5d8329dc2d00 [dir=forward];
+    node0x5d8329dc2d00 -> node0x5d8329db6a40 [dir=forward];
+    node0x5d8329db6a40 -> node0x5d8329dc23f0 [dir=forward];
+    node0x5d8329dc23f0 -> node0x5d8329dc11d0 [dir=forward];
+    node0x5d8329dc11d0 -> node0x5d8329dbff90 [dir=forward];
+    node0x5d8329dbff90 -> node0x5d8329dbea50 [dir=forward];
+    node0x5d8329dbea50 -> node0x5d8329db8650 [dir=forward];
+    node0x5d8329db8650 -> node0x5d8329db9580 [dir=forward];
+    edge [color=black, style=solid, constraint=true];
+}

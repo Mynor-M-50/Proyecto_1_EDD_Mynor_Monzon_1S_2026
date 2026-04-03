@@ -17,8 +17,8 @@ Benchmark timer;
 ReporteGraficos rep;
 bool csvCargado = false;
 
-void insertarEnCatalogo(const Producto& p) {
-    catalogo.agregarProducto(p);
+bool insertarEnCatalogo(const Producto& p) {
+    return catalogo.agregarProducto(p);
 }
 
 // Funcion auxiliar para leer numeros de forma segura
@@ -89,6 +89,45 @@ void menuBusqueda() {
     }
 }
 
+void validarConsistencia(ArbolAVL& avl, ArbolB& b, ArbolBPlus& bplus, ListaEnlazada<Producto>& lista) {
+    std::cout << "\n--- INICIANDO VALIDACION DE CONSISTENCIA ---\n";
+
+    int errores = 0;
+    int totalValidados = 0;
+
+    NodoListaEnlazada<Producto>* actual = lista.getHead();
+
+    while (actual != nullptr) {
+        Producto prod = actual->getValor();
+
+        if (avl.buscar(prod.nombre) == nullptr) {
+            std::cout << "[ERROR] " << prod.nombre << " falta en AVL\n";
+            errores++;
+        }
+
+        if (b.buscar(prod.fechaVencimiento) == nullptr) {
+            std::cout << "[ERROR] " << prod.nombre << " no se localiza por fecha en Arbol B\n";
+            errores++;
+        }
+
+        if (bplus.buscar(prod.categoria) == nullptr) {
+            std::cout << "[ERROR] " << prod.nombre << " no se localiza por categoria en Arbol B+\n";
+            errores++;
+        }
+
+        actual = actual->getSiguiente();
+        totalValidados++;
+    }
+
+    std::cout << "\nTotal validados: " << totalValidados << "\n";
+
+    if (errores == 0) {
+        std::cout << "✅ EXITO: todas las estructuras responden correctamente.\n";
+    } else {
+        std::cout << "❌ FALLO: se encontraron " << errores << " inconsistencias.\n";
+    }
+}
+
 int main() {
     int opcion;
     do {
@@ -99,6 +138,7 @@ int main() {
         std::cout << "4. Deshacer (Rollback)\n";
         std::cout << "5. Reportes Graphviz\n";
         std::cout << "6. Resumen\n";
+        std::cout << "7. Agregar Producto Manual\n";
         std::cout << "0. Salir\n";
         std::cout << "Seleccione: ";
 
@@ -113,6 +153,9 @@ int main() {
                 loader.cargarArchivo(ruta, insertarEnCatalogo);
                 timer.finalizar();
                 csvCargado = true;
+                logger.imprimirResumenCarga(catalogo.getListaOrdenada().getSize());
+                logger.resetContadores();
+                validarConsistencia(catalogo.getAVL(), catalogo.getArbolB(), catalogo.getArbolBPlus(), catalogo.getListaOrdenada());
                 break;
             }
             case 2: if(csvCargado) menuBusqueda(); else std::cout << "Cargue CSV primero.\n"; break;
@@ -133,6 +176,38 @@ int main() {
                 break;
             }
             case 6: catalogo.imprimirResumen(); break;
+
+            case 7: {
+                Producto p;
+                std::cout << "Codigo de barras  : "; std::getline(std::cin, p.codigoBarras);
+                std::cout << "Nombre            : "; std::getline(std::cin, p.nombre);
+                std::cout << "Categoria         : "; std::getline(std::cin, p.categoria);
+                std::cout << "Fecha (YYYY-MM-DD): "; std::getline(std::cin, p.fechaVencimiento);
+                std::cout << "Marca             : "; std::getline(std::cin, p.marca);
+                std::string precioStr, stockStr;
+                std::cout << "Precio            : "; std::getline(std::cin, precioStr);
+                std::cout << "Stock             : "; std::getline(std::cin, stockStr);
+                try {
+                    p.precio = std::stod(precioStr);
+                    p.stock  = std::stoi(stockStr);
+                    if (p.codigoBarras.empty() || p.nombre.empty() || p.categoria.empty() ||
+                        p.fechaVencimiento.empty() || p.marca.empty()) {
+                        std::cout << "[ERROR] Campos vacios, producto no agregado.\n";
+                        } else if (p.precio <= 0) {
+                            std::cout << "[ERROR] Precio invalido, producto no agregado.\n";
+                        } else if (p.stock < 0) {
+                            std::cout << "[ERROR] Stock invalido, producto no agregado.\n";
+                        } else if (!catalogo.agregarProducto(p)) {
+                            std::cout << "[ERROR] Codigo duplicado, producto no agregado.\n";
+                        } else {
+                            std::cout << "[INFO] Producto agregado correctamente.\n";
+                        }
+                } catch (...) {
+                    std::cout << "[ERROR] Precio o stock con formato invalido.\n";
+                }
+                break;
+            }
+
             case 0: std::cout << "Adios!\n"; break;
             default: std::cout << "Opcion invalida.\n"; break;
         }

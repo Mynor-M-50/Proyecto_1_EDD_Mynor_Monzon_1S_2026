@@ -12,7 +12,6 @@ add_executable(Proyecto_1
         Estructuras/ListaEnlazada.h
         Estructuras/NodoListaEnlazada.h
         Estructuras/TablaHash.h
-        main_pruebas.cpp
         Graficos/ReporteGraficos.h
         Graficos/ReporteGraficos.cpp
         Estructuras/NodoArbolB.h
@@ -29,4 +28,5 @@ add_executable(Proyecto_1
         Utils/Benchmark.cpp
         main.cpp
         Estructuras/Pila.h
+        generador.cpp
 )

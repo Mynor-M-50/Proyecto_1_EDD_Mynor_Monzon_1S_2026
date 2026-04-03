@@ -46,6 +46,7 @@ public:
     ArbolB& getArbolB()          { return arbolB; }
     ArbolBPlus& getArbolBPlus()  { return arbolBPlus; }
     TablaHash& getTablaHash()    { return hash; }
+    ListaEnlazada<Producto>& getListaOrdenada() { return listaOrdenada; }
 };
 
 #endif
